@@ -1,4 +1,4 @@
-package userService;
+package service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,9 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import repo.UpdateUser;
 import trainReservationSystem.ClassUtility;
 
-public class UserUtility {
+public class UserService {
 	public static String userVerification(String name,String password) throws SQLException {
 //		String query = "select u.userName,u.password from user u inner join passwords p on u.password = p.password";     old query 
 		String query = "select u.userName from user u inner join passwords p on u.password = p.password where p.password= ?"; // new query updated version
