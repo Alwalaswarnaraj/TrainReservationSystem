@@ -14,4 +14,6 @@ public class ClassUtility {
 		Connection con = DriverManager.getConnection(url, dbname, dbpass);
 		return con;
 	}
+	
+	public static void login()
 }
