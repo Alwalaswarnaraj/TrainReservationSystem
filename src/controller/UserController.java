@@ -3,6 +3,7 @@ package controller;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import model.User;
 import service.UserService;
@@ -10,10 +11,14 @@ import trainReservationSystem.ClassUtility;
 
 public class UserController {
 
-	public static void register(User u) throws SQLException {
+	public static void register() throws SQLException {
+		Scanner sc = new Scanner(System.in);
+		User u = new User();
 		String query = "INSERT INTO user (userName, emailId, password, role, createed_at) VALUES (?, ?, ?, ?, ?)";
 		Connection con = ClassUtility.getConnection();
 		PreparedStatement pst = con.prepareStatement(query);
+		System.out.println("Enter the userName");
+		u.setUserName(sc.next());
 		pst.setString(1, u.getUserName());
 		pst.setString(2, u.getEmail());
 		pst.setString(3, u.getPassword());

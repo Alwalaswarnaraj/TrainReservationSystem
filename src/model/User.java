@@ -64,6 +64,7 @@ public class User {
 		this.createdAt = new Timestamp(System.currentTimeMillis());
 	}
 	
+	public User() {}
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userName=" + userName + ", email=" + email + ", password=" + password

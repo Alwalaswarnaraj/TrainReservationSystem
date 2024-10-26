@@ -11,6 +11,7 @@ public class Train {
 	private String source;
 	private String destination;
 	private LocalDate schedule;
+	private int noOfseatedAvailable;
 	private boolean isSeatsAvailable;
 	
 	
@@ -58,6 +59,24 @@ public class Train {
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
+	public int getNoOfseatedAvailable() {
+		return noOfseatedAvailable;
+	}
+	public void setNoOfseatedAvailable(int noOfseatedAvailable) {
+		this.noOfseatedAvailable = noOfseatedAvailable;
+	}
+	
+	
+	
+	public Train(int trainNumber, String source, String destination, LocalDate schedule, int noOfseatedAvailable) {
+		super();
+		this.trainNumber = trainNumber;
+		this.source = source;
+		this.destination = destination;
+		this.schedule = schedule;
+		this.noOfseatedAvailable = noOfseatedAvailable;
+	}
+	
 	public Train() {}
 	public Train(int trainNumber, String source, String destination, boolean seatsAvailable) {
 		super();
@@ -66,5 +85,10 @@ public class Train {
 		this.destination = destination;
 		this.schedule = LocalDate.now().plusDays(5);
 		this.isSeatsAvailable = seatsAvailable;
+	}
+	@Override
+	public String toString() {
+		return "trainId=" + trainId + ", trainNumber=" + trainNumber + ", source=" + source + ", destination="
+				+ destination + ", schedule=" + schedule + ", noOfseatedAvailable=" + noOfseatedAvailable;
 	}
 }
